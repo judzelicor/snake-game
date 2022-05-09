@@ -1,0 +1,201 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body,
+html {
+	font-family: "VT323";
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	display: block;
+}
+
+input::placeholder {
+	color: #323c3979;
+}
+
+.game {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	height: 100vh;
+	width: 100vw;
+}
+
+.leaderboard {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 200;
+	display: none;
+	background-color: #d0e900;
+	flex-direction: column;
+	text-align: center;
+}
+
+.leaderboard table {
+	font-size: 24px;
+	color: #323c39;
+}
+
+.leaderboard h2 {
+	font-size: 72px;
+	text-align: center;
+	color: #323c39;
+	width: 100%;
+	align-self: flex-start;
+}
+
+.back {
+	display: flex;
+	align-self: flex-end;
+	position: absolute;
+	bottom: 14px;
+	font-size: 24px;
+	left: 25px;
+	width: 80px;
+}
+
+.game-tile {
+	font-size: 5px;
+}
+
+.game-screen {
+	background-color: #d0e900;
+	border: 1px solid #323c3940;
+	box-sizing: content-box;
+	display: flex;
+	flex-wrap: wrap;
+	grid-column: 1 / -1;
+	justify-self: center;
+	align-self: center;
+	position: relative;
+}
+
+.player-prompt {
+	flex-direction: column;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #d0e900;
+}
+
+.player-prompt input {
+	border: 7px solid #323c39;
+	font-size: 24px;
+	font-family: "VT323";
+	border-image-source: url(../images/snake.png);
+	border-image-slice: 5 5;
+	border-image-repeat: round;
+	background-color: transparent;
+	outline: none;
+	color: #323c39;
+	padding: 7px;
+}
+
+.restart {
+	text-decoration: underline;
+	font-size: 32px;
+	margin-top: 32px;
+	cursor: pointer;
+}
+
+.title-screen {
+	background-color: #d0e900;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 99;
+}
+
+.game-title {
+	font-family: "VT323";
+	font-size: 48px;
+	color: #323c39;
+}
+
+.scoreboard {
+	position: absolute;
+	left: 7px;
+	top: 7px;
+	z-index: 1;
+	color: #323c39;
+	width: 100%;
+	font-size: 24px;
+}
+
+.active {
+	position: relative;
+	animation-name: selected;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+}
+
+.active::before {
+	content: "";
+	position: absolute;
+	margin-right: 7px;
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/snake.png);
+	background-size: contain;
+	top: 5px;
+	left: -28px;
+}
+
+.title-screen-controls {
+	font-size: 24px;
+	color: #323c39;
+}
+
+.snake {
+	background-image: url(../images/snake.png);
+	background-position: center;
+	background-size: contain;
+}
+
+.food {
+	background-image: url(../images/snake-food.png);
+	background-position: center;
+	background-size: contain;
+}
+
+.lose {
+	animation-name: lose;
+	animation-duration: 300ms;
+	animation-iteration-count: 3;
+}
+
+@keyframes lose {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes selected {
+	100% {
+		transform: scale(1.1);
+	}
+}

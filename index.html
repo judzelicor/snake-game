@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Snake Game</title>
+</head>
+<body>
+  <div class="game">
+    <div id="gameScreen" class="game-screen">
+      <div class="title-screen">
+        <h1 class="game-title">Snake Game!</h1>
+        <div class="title-screen-controls">
+          <ul>
+            <li class="active">Start game</li>
+            <li>Leaderboard</li>
+            <li>Settings</li>
+          </ul>
+        </div>
+      </div>
+      <div class="scoreboard">Score: <span class="score">0</span></div>
+      <div class="player-prompt">
+        <input class="player-name" type="text" placeholder="player name...">
+        <a id="restart" class="restart">restart</a>
+      </div>
+      <div class="leaderboard">
+        <h2>Leaderboard</h2>
+          <table>
+            <thead>
+              <th>Player</th>
+              <th>Score</th>
+            </thead>
+          </table>
+        <a href="#" class="back">← BACK</a>
+      </div>
+    </div>
+    <div id="gameSettings" class="game-settings"></div>
+  </div>
+  <audio id="gameOver" src="./sfx/game-over.mp3"></audio>
+  <script src="./js/game.js"></script>
+</body>
+</html>
